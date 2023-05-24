@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ToDoList</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../css/style.css" />
+		<script
+			src="https://kit.fontawesome.com/bdb2f8ae99.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<button class="back-button"><a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a></button>
+		<div class="todolist">
+			<h1 class="todolist__title">ToDoList</h1>
+			<div class="todolist__listbox">
+				<ul class="todolist__listbox-list">
+					<li class="todolist__listbox-list-item">
+						<div class="todolist__listbox-list-item-text">
+							<p class="todolist__listbox-list-item-text-content">
+								Tommorow go for a walk
+							</p>
+						</div>
+						<div class="todolist__listbox-list-item-buttons">
+							<button
+								class="todolist__listbox-list-item-buttons-editbutton"
+								id="edit"
+							>
+								Edit
+							</button>
+							<button
+								class="todolist__listbox-list-item-buttons-deletebutton"
+								id="delete"
+							>
+								<i
+									class="fa-solid fa-trash todolist__listbox-list-item-buttons-deletebutton"
+								></i>
+							</button>
+							<button
+								class="todolist__listbox-list-item-buttons-donebutton"
+								id="done"
+							>
+								<i
+									class="fa-solid fa-check todolist__listbox-list-item-buttons-donebutton-icon"
+								></i>
+							</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="todolist__bottom">
+				<div class="todolist__edit hidden">
+					<p class="error hidden">You can't leave it empty</p>
+					<input
+						type="text"
+						class="todolist__edit-input"
+						placeholder="Enter text..."
+					/>
+					<button class="todolist__edit-button" id="apply">
+						apply changes
+					</button>
+					<button class="todolist__edit-close close-button">
+						<i class="fa-solid fa-x todolist__edit-close-icon close-icon"></i>
+					</button>
+				</div>
+				<div class="todolist__add hidden">
+					<p class="error hidden">You can't leave it empty</p>
+					<input
+						type="text"
+						class="todolist__add-input"
+						placeholder="Enter text..."
+					/>
+					<button class="todolist__add-button" id="add-button">add todo</button>
+					<button class="todolist__add-close close-button">
+						<i class="fa-solid fa-x todolist__add-close-icon close-icon"></i>
+					</button>
+				</div>
+				<button class="todolist__bottom-addbutton" id="add">
+					add new todo
+				</button>
+			</div>
+		</div>
+		<script src="../js/todolist.js"></script>
+	</body>
+</html>

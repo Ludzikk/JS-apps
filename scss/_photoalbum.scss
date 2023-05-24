@@ -1,0 +1,65 @@
+.album {
+	&__photo {
+		max-width: 200px;
+		max-height: 200px;
+		cursor: pointer;
+		border: 5px solid black;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(0.9);
+		}
+	}
+}
+
+.fullscreenphoto {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.8);
+
+	&__photo {
+		max-width: 80vw;
+		max-height: 80vh;
+		cursor: pointer;
+	}
+
+	&__button {
+		border: none;
+		font-size: 6rem;
+		border-radius: 10px;
+		background: none;
+		color: white;
+		cursor: pointer;
+		transition: transform .3s;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+
+		&--left {
+			position: absolute;
+			left: 150px;
+		}
+
+		&--right {
+			position: absolute;
+			right: 150px;
+		}
+	}
+}
+
+body {
+	display: block;
+	max-width: 1200px;
+	width: 100%;
+	margin: 5em auto;
+	background-image: url("../img/stacked-waves-haikei.svg");
+	background-size: cover;
+	overflow: hidden;
+}
