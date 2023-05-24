@@ -170,16 +170,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.fullscreenphoto__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
 }
 .fullscreenphoto__photo {
   max-width: 80vw;
   max-height: 80vh;
-  cursor: pointer;
+  z-index: 1;
 }
 .fullscreenphoto__button {
-  border: none;
+  padding: 0.5em;
   font-size: 6rem;
+  border: none;
   border-radius: 10px;
   background: none;
   color: white;

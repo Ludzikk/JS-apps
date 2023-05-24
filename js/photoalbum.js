@@ -2,6 +2,7 @@ const photo = document.querySelectorAll(".album__photo");
 const album = document.querySelector(".album");
 const URL = "https://dog.ceo/api/breeds/image/random";
 const fullScreenPhoto = document.querySelector(".fullscreenphoto");
+const fullScreenPhotoBg = document.querySelector(".fullscreenphoto__bg")
 const leftBtn = document.querySelector("#left");
 const rightBtn = document.querySelector("#right");
 let siblingBefore;
@@ -24,10 +25,6 @@ photo.forEach((photo) => {
 function showPhotoOnFullScreen() {
 	const img = fullScreenPhoto.firstElementChild;
 	fullScreenPhoto.classList.remove("hidden");
-
-	img.addEventListener("click", () => {
-		fullScreenPhoto.classList.add("hidden");
-	});
 
 	img.setAttribute("src", `${this.getAttribute("src")}`);
 
@@ -79,5 +76,10 @@ document.addEventListener("keydown", (e) => {
 		switchToLeftPhoto();
 	} else if (e.keyCode === 39) {
 		switchToRightPhoto();
+	} else if (e.keyCode === 27) {
+		fullScreenPhoto.classList.add("hidden")
 	}
 });
+fullScreenPhotoBg.addEventListener("click", () => {
+	fullScreenPhoto.classList.add("hidden")
+})
