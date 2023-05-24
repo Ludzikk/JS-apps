@@ -7,6 +7,8 @@ const rightBtn = document.querySelector("#right");
 let siblingBefore;
 let siblingAfter;
 let currentPhoto;
+let lastPhoto;
+let firstPhoto;
 
 photo.forEach((photo) => {
 	fetch(URL)
@@ -32,39 +34,50 @@ function showPhotoOnFullScreen() {
 	siblingAfter = this.nextElementSibling;
 	siblingBefore = this.previousElementSibling;
 	currentPhoto = this;
-	console.log(siblingAfter, siblingBefore, currentPhoto);
+
+	lastPhoto = album.lastElementChild;
+	firstPhoto = album.firstElementChild;
 }
 
-const updateSibling = (before, after) => {
-	const img = fullScreenPhoto.firstElementChild;
-	const lastPhoto = album.lastElementChild.getAttribute("src");
-	const firstPhoto = album.firstElementChild.getAttribute("src");
-
-	// if (siblingAfter === null) {
-	// 	img.setAttribute("src", `${firstPhoto}`);
-	// } else if (siblingBefore === null) {
-	// 	img.setAttribute("src", `${lastPhoto}`);
-	// } else {
+const updateSibling = () => {
 	siblingAfter = currentPhoto.nextElementSibling;
 	siblingBefore = currentPhoto.previousElementSibling;
-	// }
 };
 
 const switchToLeftPhoto = () => {
 	const img = fullScreenPhoto.firstElementChild;
-	img.setAttribute("src", `${siblingBefore.getAttribute("src")}`);
-	currentPhoto = currentPhoto.previousElementSibling;
+
+	if (siblingBefore === null) {
+		img.setAttribute("src", `${lastPhoto.getAttribute("src")}`);
+		currentPhoto = lastPhoto;
+	} else {
+		img.setAttribute("src", `${siblingBefore.getAttribute("src")}`);
+		currentPhoto = currentPhoto.previousElementSibling;
+	}
 
 	updateSibling();
 };
 
 const switchToRightPhoto = () => {
 	const img = fullScreenPhoto.firstElementChild;
-	img.setAttribute("src", `${siblingAfter.getAttribute("src")}`);
-	currentPhoto = currentPhoto.nextElementSibling;
+
+	if (siblingAfter === null) {
+		img.setAttribute("src", `${firstPhoto.getAttribute("src")}`);
+		currentPhoto = firstPhoto;
+	} else {
+		img.setAttribute("src", `${siblingAfter.getAttribute("src")}`);
+		currentPhoto = currentPhoto.nextElementSibling;
+	}
 
 	updateSibling();
 };
 
 leftBtn.addEventListener("click", switchToLeftPhoto);
 rightBtn.addEventListener("click", switchToRightPhoto);
+document.addEventListener("keydown", (e) => {
+	if (e.keyCode === 37) {
+		switchToLeftPhoto();
+	} else if (e.keyCode === 39) {
+		switchToRightPhoto();
+	}
+});
