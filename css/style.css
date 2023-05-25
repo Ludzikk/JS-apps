@@ -406,6 +406,26 @@ body {
   background-color: black;
 }
 
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 400px;
+  border-radius: 25px;
+  background-color: white;
+}
+.time__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  height: 100px;
+  width: 50px;
+  font-size: 32px;
+  box-shadow: 0px 0px 5px black;
+}
+
 .back-button {
   position: absolute;
   top: 25px;
