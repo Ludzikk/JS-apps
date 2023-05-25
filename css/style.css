@@ -216,6 +216,196 @@ body {
   overflow: hidden;
 }
 
+.clock {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: white;
+  overflow: hidden;
+}
+.clock__line {
+  height: 15px;
+  width: 10px;
+  background-color: black;
+}
+.clock__line--12 {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%);
+}
+.clock__line--9 {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%) rotate(90deg);
+}
+.clock__line--6 {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+}
+.clock__line--3 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%) rotate(90deg);
+}
+.clock__line--1 {
+  position: absolute;
+  top: 7.5%;
+  right: 23%;
+  transform: rotate(30deg);
+}
+.clock__line--2 {
+  position: absolute;
+  top: 25%;
+  right: 6%;
+  transform: rotate(60deg);
+}
+.clock__line--4 {
+  position: absolute;
+  bottom: 25%;
+  right: 6%;
+  transform: rotate(-60deg);
+}
+.clock__line--5 {
+  position: absolute;
+  bottom: 7.5%;
+  right: 23%;
+  transform: rotate(-30deg);
+}
+.clock__line--11 {
+  position: absolute;
+  top: 7.5%;
+  left: 23%;
+  transform: rotate(-30deg);
+}
+.clock__line--10 {
+  position: absolute;
+  top: 25%;
+  left: 6%;
+  transform: rotate(-60deg);
+}
+.clock__line--8 {
+  position: absolute;
+  bottom: 7.5%;
+  left: 23%;
+  transform: rotate(30deg);
+}
+.clock__line--7 {
+  position: absolute;
+  bottom: 25%;
+  left: 6%;
+  transform: rotate(60deg);
+}
+.clock__number--12 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.clock__number--11 {
+  position: absolute;
+  top: 11%;
+  left: 24%;
+}
+.clock__number--1 {
+  position: absolute;
+  top: 11%;
+  right: 25%;
+}
+.clock__number--2 {
+  position: absolute;
+  top: 26%;
+  right: 10%;
+}
+.clock__number--10 {
+  position: absolute;
+  top: 26%;
+  left: 10%;
+}
+.clock__number--6 {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.clock__number--3 {
+  position: absolute;
+  bottom: 47%;
+  right: 5%;
+}
+.clock__number--9 {
+  position: absolute;
+  bottom: 47%;
+  left: 5%;
+}
+.clock__number--8 {
+  position: absolute;
+  bottom: 26%;
+  left: 10%;
+}
+.clock__number--4 {
+  position: absolute;
+  bottom: 26%;
+  right: 10%;
+}
+.clock__number--7 {
+  position: absolute;
+  bottom: 11%;
+  left: 25%;
+}
+.clock__number--5 {
+  position: absolute;
+  bottom: 11%;
+  right: 25%;
+}
+.clock__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: black;
+}
+.clock__bighand {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 15px;
+  height: 75px;
+  background-color: black;
+}
+.clock__middlehand {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 10px;
+  height: 125px;
+  background-color: black;
+}
+.clock__smallhand {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 5px;
+  height: 150px;
+  background-color: black;
+}
+
 .back-button {
   position: absolute;
   top: 25px;
@@ -247,4 +437,11 @@ body {
 
 .hidden {
   display: none;
+}
+
+.clock-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
 }/*# sourceMappingURL=style.css.map */
