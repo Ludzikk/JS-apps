@@ -2,7 +2,7 @@ const photo = document.querySelectorAll(".album__photo");
 const album = document.querySelector(".album");
 const URL = "https://dog.ceo/api/breeds/image/random";
 const fullScreenPhoto = document.querySelector(".fullscreenphoto");
-const fullScreenPhotoBg = document.querySelector(".fullscreenphoto__bg")
+const fullScreenPhotoBg = document.querySelector(".fullscreenphoto__bg");
 const leftBtn = document.querySelector("#left");
 const rightBtn = document.querySelector("#right");
 let siblingBefore;
@@ -16,6 +16,7 @@ photo.forEach((photo) => {
 		.then((res) => res.json())
 		.then((data) => {
 			photo.setAttribute("src", `${data.message}`);
+			photo.classList.remove("hidden");
 		})
 		.catch((err) => err.log("API ERROR"));
 
@@ -77,9 +78,9 @@ document.addEventListener("keydown", (e) => {
 	} else if (e.keyCode === 39) {
 		switchToRightPhoto();
 	} else if (e.keyCode === 27) {
-		fullScreenPhoto.classList.add("hidden")
+		fullScreenPhoto.classList.add("hidden");
 	}
 });
 fullScreenPhotoBg.addEventListener("click", () => {
-	fullScreenPhoto.classList.add("hidden")
-})
+	fullScreenPhoto.classList.add("hidden");
+});
