@@ -17,7 +17,16 @@
 
 .elements {
 	&__list {
+		display: flex;
 		list-style: none;
+	}
+
+	&__item {
+		transition: transform .3s;
+		
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 
 	&__link {
